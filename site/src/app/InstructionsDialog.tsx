@@ -44,6 +44,10 @@ function InstructionsDialog({ app, sha, close }: Props): JSX.Element {
                     <CodeBlock
                         text={`west init -m "${app.repo}" --mr ${
                             sha ?? '<latest tag>'
+                        }${
+                            app.manifest && app.manifest !== 'west.yml'
+                                ? ` --mf ${app.manifest}`
+                                : ''
                         }`}
                     />
                 </Step>

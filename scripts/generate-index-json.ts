@@ -184,6 +184,7 @@ async function fetchRepoData(
             name: app.name,
             title: app.title,
             defaultBranch: app.defaultBranch ?? app.releases[0]?.tag,
+            manifest: app.manifest,
             kind: app.kind,
             license: app.license ?? 'Other License',
             apps: app.apps,
